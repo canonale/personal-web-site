@@ -1,12 +1,27 @@
 <script setup lang="ts">
-defineProps<{
+import MenuTop from "./menuTop/MenuTop.vue";
+import { computed, ref } from "vue";
+import type { Ref } from "vue";
+
+const props = defineProps<{
   msg: string;
 }>();
+
+const incremental: Ref<number> = ref(0);
+
+const doIncrement = (): void => {
+  incremental.value++;
+};
+
+const comp = computed(() => `Do: ${props.msg} ${incremental.value}`);
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
+    <menu-top />
+    <button @click="doIncrement">{{ incremental }}</button>
+    <h2>{{ comp }}</h2>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
