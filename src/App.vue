@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import HeaderMain from './components/header/HeaderMain.vue';
 </script>
 
 <template>
   <div class="m-2">
-    <header>Header Component</header>
+    <header-main />
     <div>Call out component</div>
     <div>Features component</div>
     <div>Pricing component</div>
