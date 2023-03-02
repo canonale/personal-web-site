@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MenuTop from '../menuTop/MenuTop.vue';
-import Logotype from '../logotype/Logotype.vue';
+import MenuTop from "../menuTop/MenuTop.vue";
+import Logotype from "../logotype/Logotype.vue";
 </script>
 
 <template>

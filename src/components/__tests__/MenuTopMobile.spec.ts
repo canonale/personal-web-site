@@ -1,9 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import { mount } from "@vue/test-utils";
+import { mount, flushPromises } from "@vue/test-utils";
 import MenuTop from "../menuTop/MenuTop.vue";
-import IconBars3BottomRight from "../icons/IconBars3BottomRight.vue";
-import IconXMark from "../icons/IconXMark.vue";
 
 describe("Menu Top", () => {
   it("The component exists", () => {
@@ -22,16 +20,20 @@ describe("Menu Top", () => {
   });
   it("Item number", async () => {
     const wrapper = mount(MenuTop);
-    const menuItems: Array<String> = wrapper.vm.menuItems;
+    const menuItems: Array<string> = wrapper.vm.menuItems;
     await wrapper.find("button.show-menu").trigger("click");
     const menuItemsHTML = wrapper.findAll("menu > ul > li");
     expect(menuItems.length).toBe(menuItemsHTML.length);
   });
   it("Menu button changes when clicking on", async () => {
     const wrapper = mount(MenuTop);
-    expect(wrapper.findComponent(IconBars3BottomRight).exists()).toBeTruthy();
+    await flushPromises();
+    let toOpenIcon = wrapper.find('svg[data-test="IconBars3BottomRight"]');
+    expect(toOpenIcon.exists()).toBeTruthy();
     await wrapper.find("button.show-menu").trigger("click");
-    expect(wrapper.findComponent(IconBars3BottomRight).exists()).toBeFalsy();
-    expect(wrapper.findComponent(IconXMark).exists()).toBeTruthy();
+    expect(wrapper.find('svg[data-test="IconXMark"]')).toBeTruthy();
+    toOpenIcon = wrapper.find('svg[data-test="IconBars3BottomRight"]');
+    await flushPromises();
+    expect(toOpenIcon.exists()).toBeFalsy();
   });
 });
