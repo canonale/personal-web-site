@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 
 import { mount, flushPromises } from "@vue/test-utils";
 import MenuTop from "../menuTop/MenuTop.vue";
+import SocialNetworks from "../menuTop/SocialNetworks.vue";
 
 describe("Menu Top", () => {
   it("The component exists", () => {
@@ -35,5 +36,13 @@ describe("Menu Top", () => {
     toOpenIcon = wrapper.find('svg[data-test="IconBars3BottomRight"]');
     await flushPromises();
     expect(toOpenIcon.exists()).toBeFalsy();
+  });
+  it("Social network icons exist", async () => {
+    const wrapper = mount(MenuTop);
+    await flushPromises();
+    wrapper.vm.showMenu = true;
+    await flushPromises();
+    expect(wrapper.findComponent(SocialNetworks).exists()).toBeTruthy();
+    wrapper.vm.showMenu = false;
   });
 });

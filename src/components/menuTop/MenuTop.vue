@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MenuItem from "./MenuItem.vue";
+import SocialNetworks from "../menuTop/SocialNetworks.vue";
 import { computed, defineAsyncComponent, ref } from "vue";
 
 
@@ -31,6 +32,7 @@ const showHidenMenu = () => {
           :text="item"
         />
       </ul>
+      <social-networks />
     </menu>
   </div>
 </template>
