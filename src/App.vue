@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import HeaderMain from './components/header/HeaderMain.vue';
+import CallOutFront from "./components/callOutFront/CallOutFront.vue";
+import HeaderMain from "./components/header/HeaderMain.vue";
 </script>
 
 <template>
   <div class="m-2">
     <header-main />
-    <div>Call out component</div>
+    <call-out-front />
     <div>Features component</div>
     <div>Pricing component</div>
     <div>Contant component</div>
