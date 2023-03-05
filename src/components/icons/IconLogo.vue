@@ -1,17 +1,31 @@
 <script lang="ts">
+import { computed } from "vue";
+
 export default {
   name: "IconLogo",
+  props: {
+    small: {
+      default: true,
+      type: Boolean,
+    },
+  },
+  setup(props) {
+    const scale = computed(() => (props.small ? 1 : 10));
+    return {
+      scale,
+    };
+  },
 };
 </script>
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="32"
-    height="32"
+    :width="32 * scale"
+    :height="32 * scale"
     fill="none"
     xmlns:v="https://vecta.io/nano"
   >
-    <g clip-path="url(#C)">
+    <g :transform="`scale(${scale})`" clip-path="url(#C)">
       <path
         d="M24.028 17.928c2.779-5.786-2.241-7.069-3.874-3.005l1.408 7.51c-2.516 2.922-5.71 5.251-9.131 7.382-2.231-.406-4.522-1.747-4.095-4.823.355-2.56-1.521-3.384-.513-5.375l-1.536-.683 1.92-4.566-.853-.725.512-3.84c-1.529.507-4.037-5.833 9.125-6.991 7.057-.146 9.54 2.508 10.055 7.117.261 2.335-.845 4.517-1.149 7.384-.259-.149-2.161.762-1.869.616z"
         fill="url(#A)"

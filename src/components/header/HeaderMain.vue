@@ -4,7 +4,7 @@ import Logotype from "../logotype/Logotype.vue";
 </script>
 
 <template>
-  <div class="flex justify-between">
+  <div class="flex justify-between bg-gray-800">
     <div>
       <logotype />
     </div>
