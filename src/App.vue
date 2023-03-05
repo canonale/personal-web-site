@@ -4,12 +4,14 @@ import HeaderMain from "./components/header/HeaderMain.vue";
 </script>
 
 <template>
-  <div class="m-2">
+  <div>
     <header-main />
-    <call-out-front />
-    <div>Features component</div>
-    <div>Pricing component</div>
-    <div>Contant component</div>
-    <footer>Footer component</footer>
+    <div class="mx-2">
+      <call-out-front />
+      <div>Features component</div>
+      <div>Pricing component</div>
+      <div>Contant component</div>
+      <footer>Footer component</footer>
+    </div>
   </div>
 </template>
