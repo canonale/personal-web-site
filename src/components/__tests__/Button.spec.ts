@@ -21,12 +21,16 @@ describe("Button component tests", () => {
   });
 
   it("Check button props", () => {
-    const wrapper = mount(Button, {
-      props: {
-        cta: true,
-      },
-    });
-    const buttonHTML = wrapper.find("button");
-    expect(buttonHTML.classes()).toContain("bg-indigo-500");
+    const factory = (cta: boolean) => {
+      return mount(Button, {
+        props: {
+          cta: cta,
+        },
+      });
+    };
+    let wrapper = factory(true);
+    expect(wrapper.find("button").classes()).toContain("bg-indigo-500");
+    wrapper = factory(false);
+    expect(wrapper.find("button").classes()).toContain("bg-slate-700");
   });
 });

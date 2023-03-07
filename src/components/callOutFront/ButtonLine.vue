@@ -2,7 +2,9 @@
 import Button from "../button/Button.vue";
 </script>
 <template>
-  <div>
-    <Button>Get Started</Button>
+  <div class="grid grid-cols-2 gap-8 justify-items-center">
+    <Button :cta="true">Get Started</Button>
+    <Button>Why Canonale?</Button>
+    <Button class="col-span-2">View on GitHub</Button>
   </div>
 </template>
