@@ -2,7 +2,7 @@
 import IconLogo from "../icons/IconLogo.vue";
 </script>
 <template>
-  <div class="relative w-80 h-80">
+  <div class="relative w-full h-80">
     <div class="w-full h-full z-10 absolute">
       <IconLogo :small="false" class="w-full h-full" />
     </div>

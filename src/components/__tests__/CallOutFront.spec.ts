@@ -25,4 +25,8 @@ describe("Menu Top", () => {
     expect(wrapper.findComponent(GradientTitle).exists()).toBe(true);
     expect(wrapper.find("h1").text()).eq(slotText);
   });
+  it("Button line component exists", () => {
+    const wrapper = mount(CallOutFront);
+    expect(wrapper.findComponent(ButtonLine).exists()).toBe(true);
+  });
 });
