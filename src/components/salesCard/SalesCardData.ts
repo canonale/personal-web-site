@@ -6,3 +6,4 @@ export interface SalesCardData {
 }
 
 export const FREE_TEXT = "FREE";
+export const PRINCING_TEXT = "€/hour";

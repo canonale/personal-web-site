@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import type { SalesCardData } from "./SalesCardData";
+import { FREE_TEXT } from "./SalesCardData";
 export interface SalesCardData {
   name: string;
   bullets: Array<string>;
@@ -12,6 +12,7 @@ defineProps<SalesCardData>();
 <template>
   <div>
     <h1 class="name">{{ name }}</h1>
+    <h2 class="price">{{ FREE_TEXT }}</h2>
     <ul class="bullets">
       <li v-for="(text, key) in bullets" :key="key">{{ text }}</li>
     </ul>
