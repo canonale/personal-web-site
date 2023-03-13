@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { FREE_TEXT } from "./SalesCardData";
+import { computed } from "vue";
+import { FREE_TEXT, PRINCING_TEXT } from "./SalesCardData";
 export interface SalesCardData {
   name: string;
   bullets: Array<string>;
@@ -7,12 +8,16 @@ export interface SalesCardData {
   featured: boolean;
 }
 
-defineProps<SalesCardData>();
+const props = defineProps<SalesCardData>();
+
+const pricing = computed((): string =>
+  props.price == 0 ? FREE_TEXT : `${props.price}${PRINCING_TEXT}`
+);
 </script>
 <template>
   <div>
     <h1 class="name">{{ name }}</h1>
-    <h2 class="price">{{ FREE_TEXT }}</h2>
+    <h2 class="price">{{ pricing }}</h2>
     <ul class="bullets">
       <li v-for="(text, key) in bullets" :key="key">{{ text }}</li>
     </ul>
