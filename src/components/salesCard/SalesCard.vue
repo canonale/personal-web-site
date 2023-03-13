@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { FREE_TEXT, PRINCING_TEXT } from "./SalesCardData";
+import {
+  FREE_TEXT,
+  PRINCING_TEXT,
+  FEATURED_TEXT,
+  FEATURED_PRECENTAGE,
+} from "./SalesCardData";
 export interface SalesCardData {
   name: string;
   bullets: Array<string>;
@@ -21,6 +26,9 @@ const pricing = computed((): string =>
     <ul class="bullets">
       <li v-for="(text, key) in bullets" :key="key">{{ text }}</li>
     </ul>
-    <div v-if="featured" class="featured">8%</div>
+    <div v-if="featured" class="featured">
+      <div>{{ FEATURED_TEXT }}</div>
+      <div>{{ FEATURED_PRECENTAGE }}</div>
+    </div>
   </div>
 </template>
