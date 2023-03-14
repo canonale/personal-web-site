@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
+import ButtonVue from "../button/Button.vue";
 import SalesCard from "../salesCard/SalesCard.vue";
 import {
   FREE_TEXT,
@@ -50,5 +51,9 @@ describe("SalesCard component tests", () => {
     expect(wrapper.find(".featured").text()).toBe(
       `${FEATURED_TEXT}${FEATURED_PRECENTAGE}`
     );
+  });
+  it("There is a button", () => {
+    const wrapper = featureCardFactory();
+    expect(wrapper.findComponent(ButtonVue).exists()).toBeTruthy();
   });
 });

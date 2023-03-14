@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import Button from "../button/Button.vue";
 import {
+  BUTTON_TEXT,
   FREE_TEXT,
   PRINCING_TEXT,
   FEATURED_TEXT,
@@ -46,6 +48,9 @@ const pricing = computed((): string =>
           {{ text }}
         </li>
       </ul>
+    </div>
+    <div>
+      <Button>{{ BUTTON_TEXT }}</Button>
     </div>
   </div>
 </template>
