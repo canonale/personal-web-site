@@ -50,7 +50,7 @@ const pricing = computed((): string =>
       </ul>
     </div>
     <div>
-      <Button>{{ BUTTON_TEXT }}</Button>
+      <Button class="w-full">{{ BUTTON_TEXT }}</Button>
     </div>
   </div>
 </template>
@@ -62,6 +62,7 @@ const pricing = computed((): string =>
   @apply duration-700 transition-all hover:bg-neutral-900 hover:scale-105;
   @apply border border-neutral-600 rounded-md;
   @apply p-9 h-[33.5rem] overflow-hidden;
+  @apply flex flex-col justify-between;
 }
 .featured {
   @apply text-white;
