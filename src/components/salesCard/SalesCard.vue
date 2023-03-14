@@ -21,6 +21,16 @@ const pricing = computed((): string =>
 </script>
 <template>
   <div class="sales-card">
+    <div v-if="featured" class="featured">
+      <div class="-rotate-45 text-bold">
+        <div class="text-xs leading-none drop-shadow">
+          {{ FEATURED_TEXT }}
+        </div>
+        <div class="text-lg leading-none drop-shadow">
+          {{ FEATURED_PRECENTAGE }}
+        </div>
+      </div>
+    </div>
     <div class="flex flex-col gap-4">
       <h1 class="name text-2xl uppercase">{{ name }}</h1>
       <h2 class="price text-5xl font-semibold">
@@ -37,18 +47,23 @@ const pricing = computed((): string =>
         </li>
       </ul>
     </div>
-    <div v-if="featured" class="featured">
-      <div>{{ FEATURED_TEXT }}</div>
-      <div>{{ FEATURED_PRECENTAGE }}</div>
-    </div>
   </div>
 </template>
 
 <style scoped>
 .sales-card {
+  @apply relative;
   @apply text-neutral-300;
   @apply duration-700 transition-all hover:bg-neutral-900 hover:scale-105;
   @apply border border-neutral-600 rounded-md;
-  @apply p-9 h-[33.5rem];
+  @apply p-9 h-[33.5rem] overflow-hidden;
+}
+.featured {
+  @apply text-white;
+  @apply rotate-45 absolute -right-14 -top-14 w-28 h-28;
+  @apply flex items-end justify-center pb-1.5;
+  @apply transition-all hover:-right-16 hover:w-[140px];
+  background: linear-gradient(136.57deg, #9747FF 20.31%, #47CAFF 100%);
+  box-shadow: inset 0px 0px 4px rgba(71, 202, 255, 0.62);
 }
 </style>
