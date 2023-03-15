@@ -5,6 +5,7 @@ export interface SalesCardData {
   featured: boolean;
 }
 
+export const PRICING_TITLE = "Choose the plan that's right for you.";
 export const FREE_TEXT = "FREE";
 export const PRINCING_TEXT = "€/hour";
 export const FEATURED_TEXT = "save";

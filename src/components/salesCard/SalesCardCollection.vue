@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import SalesCard from "./SalesCard.vue";
-import { salesCardData } from "./SalesCardData";
-
-const data = salesCardData[0];
+import { salesCardData, PRICING_TITLE } from "./SalesCardData";
 </script>
 
 <template>
-  <div>
-    <div>Title</div>
-    <div>
+  <div class="mt-16 pt-16 border-t border-neutral-600">
+    <div class="py-4 px-2">
+      <h1 class="main-title text-center">{{ PRICING_TITLE }}</h1>
+    </div>
+    <div class="flex flex-col gap-4 my-8">
       <sales-card
-        :name="data.name"
-        :featured="data.featured"
-        :price="data.price"
-        :bullets="data.bullets"
+        v-for="(salesCard, key) in salesCardData"
+        :key="key"
+        :name="salesCard.name"
+        :featured="salesCard.featured"
+        :price="salesCard.price"
+        :bullets="salesCard.bullets"
       />
     </div>
   </div>

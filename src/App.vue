@@ -12,7 +12,6 @@ import SalesCardCollection from "./components/salesCard/SalesCardCollection.vue"
       <call-out-front />
       <feature-card-collection />
       <sales-card-collection />
-      <div>Pricing component</div>
       <div>Contact component</div>
       <footer>Footer component</footer>
     </div>
