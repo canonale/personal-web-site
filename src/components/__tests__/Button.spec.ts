@@ -33,4 +33,18 @@ describe("Button component tests", () => {
     wrapper = factory(false);
     expect(wrapper.find("button").classes()).toContain("bg-slate-700");
   });
+  it("Check button disabled prop", () => {
+    const factory = (disabled: boolean) => {
+      return mount(Button, {
+        props: {
+          cta: true,
+          disabled: disabled,
+        },
+      });
+    };
+    let wrapper = factory(true);
+    expect(wrapper.find("button").classes()).toContain("bg-indigo-300");
+    wrapper = factory(false);
+    expect(wrapper.find("button").classes()).toContain("bg-indigo-500");
+  });
 });

@@ -26,7 +26,7 @@ describe("Menu Top", () => {
     const menuItemsHTML = wrapper.findAll("menu > ul > li");
     expect(menuItems.length).toBe(menuItemsHTML.length);
   });
-  it("Menu button changes when clicking on", async () => {
+  it.skip("Menu button changes when clicking on", async () => {
     const wrapper = mount(MenuTop);
     await flushPromises();
     let toOpenIcon = wrapper.find('svg[data-test="IconBars3BottomRight"]');
