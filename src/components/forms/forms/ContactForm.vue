@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import Button from "@/components/button/Button.vue";
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import Input from "../input/Input.vue";
 import TextArea from "../input/textarea/TextArea.vue";
 import { useContactForm } from "./contactForm";
 
-const { fields, getIsSubmitable } = useContactForm();
-const isSubmitable = computed(() => getIsSubmitable(fields));
-const comments = ref("");
+const { inputFields, textFields, getIsSubmitable } = useContactForm();
+const isSubmitable = computed(() => getIsSubmitable(inputFields));
 </script>
 <template>
   <div class="contact-form-div">
@@ -17,7 +16,7 @@ const comments = ref("");
           We are really thankful for contacting us
         </h1>
       </div>
-      <div v-for="field in fields" :key="field.name">
+      <div v-for="field in inputFields" :key="field.name">
         <Input
           v-model:model-value="field.model"
           :required="field.require"
@@ -25,8 +24,8 @@ const comments = ref("");
           :type="field.type"
         />
       </div>
-      <div>
-        <TextArea v-model:model-value="comments" placeholder="Your Comments" />
+      <div v-for="field in textFields" :key="field.name">
+        <TextArea v-model:model-value="field.model" :placeholder="field.name" />
       </div>
       <div>
         <Button class="w-full" :cta="true" :disabled="!isSubmitable"

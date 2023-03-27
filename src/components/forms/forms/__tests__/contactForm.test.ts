@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { FormField } from "@/components/forms/forms/contactForm.d";
+import type { InputFormField } from "@/components/forms/forms/contactForm.d";
 import { isFieldOK, useContactForm } from "../contactForm";
 import { reactive } from "vue";
 
@@ -8,7 +8,7 @@ const EMPTY_STRING = "";
 describe("Contact form testing", () => {
   it("A field is required and empty", () => {
     const name = "";
-    const field: FormField = {
+    const field: InputFormField = {
       model: name,
       name: FIELD_NAME,
       require: true,
@@ -18,7 +18,7 @@ describe("Contact form testing", () => {
   });
   it("A field is required and filled", () => {
     const name = "It's my name";
-    const field: FormField = {
+    const field: InputFormField = {
       model: name,
       name: FIELD_NAME,
       require: true,
@@ -28,7 +28,7 @@ describe("Contact form testing", () => {
   });
   it("A field isn't required and filled", () => {
     const name = "It's my name";
-    const field: FormField = {
+    const field: InputFormField = {
       model: name,
       name: FIELD_NAME,
     };
@@ -37,7 +37,7 @@ describe("Contact form testing", () => {
   });
   it("A field is required and empty", () => {
     const name = "";
-    const field: FormField = {
+    const field: InputFormField = {
       model: name,
       name: FIELD_NAME,
       require: true,
@@ -48,7 +48,7 @@ describe("Contact form testing", () => {
 
   it("is Submitable", () => {
     const { getIsSubmitable } = useContactForm();
-    const fields = reactive<Array<FormField>>([
+    const fields = reactive<Array<InputFormField>>([
       {
         model: EMPTY_STRING,
         require: true,

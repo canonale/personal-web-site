@@ -1,7 +1,7 @@
 import { reactive } from "vue";
-import type { FormField } from "./contactForm.d";
+import type { FormField, InputFormField } from "./contactForm.d";
 
-export const isFieldOK = (field: FormField): boolean => {
+export const isFieldOK = (field: InputFormField): boolean => {
   const model = field.model;
   const required = field.require;
   if (required?.valueOf()) {
@@ -18,7 +18,7 @@ enum InputType {
 
 const EMPTY_STRING = "";
 
-const fields = reactive<Array<FormField>>([
+const inputFields = reactive<Array<InputFormField>>([
   {
     model: EMPTY_STRING,
     require: true,
@@ -45,8 +45,15 @@ const fields = reactive<Array<FormField>>([
   },
 ]);
 
-const getIsSubmitable = (fields: FormField[]): boolean => {
-  const values: Array<boolean> = fields.map((field: FormField) => {
+const textFields = reactive<FormField[]>([
+  {
+    model: EMPTY_STRING,
+    name: "Your Comments",
+  },
+]);
+
+const getIsSubmitable = (fields: InputFormField[]): boolean => {
+  const values: Array<boolean> = fields.map((field: InputFormField) => {
     return isFieldOK(field);
   });
   return values.every((i) => i);
@@ -54,7 +61,8 @@ const getIsSubmitable = (fields: FormField[]): boolean => {
 
 export const useContactForm = () => {
   return {
-    fields,
+    inputFields,
+    textFields,
     getIsSubmitable,
   };
 };
