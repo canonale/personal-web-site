@@ -2,23 +2,16 @@
 export interface Props {
   modelValue: string;
   placeholder: string;
-  required?: boolean;
-  type?: string;
 }
-withDefaults(defineProps<Props>(), {
-  required: false,
-  type: "text",
-});
+defineProps<Props>();
 defineEmits(["update:modelValue"]);
 </script>
 
 <template>
-  <input
+  <textarea
     :placeholder="placeholder"
     :value="modelValue"
-    :required="required"
-    :type="type"
-    class="input"
+    class="input h-32"
     @input="$emit('update:modelValue', $event.target.value ?? '')"
   />
 </template>

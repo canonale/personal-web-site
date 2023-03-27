@@ -13,6 +13,8 @@ import ContactForm from "./components/forms/forms/ContactForm.vue";
       <call-out-front />
       <feature-card-collection />
       <sales-card-collection />
+    </div>
+    <div>
       <contact-form />
       <div>Contact component</div>
       <footer>Footer component</footer>
