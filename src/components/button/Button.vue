@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, type ButtonHTMLAttributes } from "vue";
 export interface Props {
   cta?: boolean;
   disabled?: boolean;
+  type?: ButtonHTMLAttributes["type"];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   cta: false,
   disabled: false,
+  type: "button",
 });
 
 const buttonType = computed((): string => {
@@ -27,6 +29,7 @@ const buttonType = computed((): string => {
     class="border rounded-full text-sm px-5 leading-10"
     :disabled="disabled"
     :class="buttonType"
+    :type="type"
   >
     <slot></slot>
   </button>

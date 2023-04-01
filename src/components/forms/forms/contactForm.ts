@@ -1,3 +1,4 @@
+import { ContactFormEmailJS } from "@/communications/ContactFormREST";
 import { reactive } from "vue";
 import type { FormField, InputFormField } from "./contactForm.d";
 
@@ -52,6 +53,19 @@ const textFields = reactive<FormField[]>([
   },
 ]);
 
+export const sendEmail = async () => {
+  const values = [
+    ...inputFields.map((i) => i.model),
+    ...textFields.map((i) => i.model),
+  ];
+  const contactForm = new ContactFormEmailJS(values);
+  try {
+    await contactForm.send();
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const getIsSubmitable = (fields: InputFormField[]): boolean => {
   const values: Array<boolean> = fields.map((field: InputFormField) => {
     return isFieldOK(field);
@@ -64,5 +78,6 @@ export const useContactForm = () => {
     inputFields,
     textFields,
     getIsSubmitable,
+    sendEmail,
   };
 };

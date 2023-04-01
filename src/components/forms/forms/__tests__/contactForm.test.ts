@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import type { InputFormField } from "@/components/forms/forms/contactForm.d";
 import { isFieldOK, useContactForm } from "../contactForm";
 import { reactive } from "vue";
@@ -61,7 +61,7 @@ describe("Contact form testing", () => {
       },
     ]);
     expect(getIsSubmitable(fields)).toBeFalsy();
-    fields.map((field) => {
+    fields.forEach((field) => {
       field.model = "Filled out";
     });
     expect(getIsSubmitable(fields)).toBeTruthy();
