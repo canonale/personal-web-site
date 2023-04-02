@@ -14,7 +14,8 @@ import ButtonLine from "./ButtonLine.vue";
         Next Generation Management Tooling
       </h1>
       <h2 class="md:text-center text-slate-400 text-2xl">
-        Get ready for a full-stack engineer so that you can finally catch up with your limits.
+        Get ready for a full-stack engineer so that you can finally catch up
+        with your limits.
       </h2>
       <button-line />
     </div>

@@ -3,7 +3,7 @@ import FeatureCard from "./FeatureCard.vue";
 import { data } from "./FeatureCardData";
 </script>
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
     <FeatureCard
       v-for="(card, key) in data"
       :key="key"
