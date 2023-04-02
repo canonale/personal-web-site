@@ -16,11 +16,11 @@ export class ContactFormEmailJS implements ContactFormREST {
     const serviceID = import.meta.env.VITE_SERVICE_ID;
     const templateID = import.meta.env.VITE_TEMPLATE_ID;
     const formData: Record<string, string> = {
-      name: this.fields[0],
+      from_name: this.fields[0],
       company: this.fields[1],
-      email: this.fields[2],
+      user_email: this.fields[2],
       phone: this.fields[3],
-      comments: this.fields[4],
+      message: this.fields[4],
     };
     try {
       await emailjs.send(serviceID, templateID, formData, userID);

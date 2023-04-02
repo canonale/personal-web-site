@@ -11,6 +11,7 @@ const isSubmitable = computed(() => getIsSubmitable(inputFields));
 const submitForm = async () => {
   try {
     await sendEmail();
+    alert("Thanks for contacting me");
   } catch (e) {
     alert(e);
   }
