@@ -16,7 +16,6 @@ import ContactForm from "./components/forms/forms/ContactForm.vue";
     </div>
     <div>
       <contact-form />
-      <div>Contact component</div>
       <footer>Footer component</footer>
     </div>
   </div>

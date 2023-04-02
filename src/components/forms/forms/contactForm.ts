@@ -62,7 +62,7 @@ export const sendEmail = async () => {
   try {
     await contactForm.send();
   } catch (e) {
-    console.log(e);
+    throw new Error(e as string);
   }
 };
 

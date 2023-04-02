@@ -1,16 +1,6 @@
 import { mount } from "@vue/test-utils";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import ContactForm from "../ContactForm.vue";
-import { ContactFormEmailJS } from "@/communications/ContactFormREST";
-
-const contactMock = vi.spyOn(ContactFormEmailJS.prototype, "send");
-const sendEmailMock = vi.mock("@/communications/ContactFormREST", () => {
-  const ContactFormEmailJS = vi.fn();
-  ContactFormEmailJS.prototype.send = vi.fn();
-  return {
-    ContactFormEmailJS,
-  };
-});
 
 const DUMMY_TEST = "hello@world.com";
 

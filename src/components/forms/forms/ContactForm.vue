@@ -8,10 +8,17 @@ import { useContactForm } from "./contactForm";
 const { inputFields, textFields, getIsSubmitable, sendEmail } =
   useContactForm();
 const isSubmitable = computed(() => getIsSubmitable(inputFields));
+const submitForm = async () => {
+  try {
+    await sendEmail();
+  } catch (e) {
+    alert(e);
+  }
+};
 </script>
 <template>
   <div class="contact-form-div">
-    <form ref="form" @submit.prevent="sendEmail">
+    <form ref="form" @submit.prevent="submitForm">
       <div class="flex flex-col gap-4">
         <div>
           <h1 class="text-5xl text-neutral-400 text-center">

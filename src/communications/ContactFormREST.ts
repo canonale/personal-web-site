@@ -25,7 +25,7 @@ export class ContactFormEmailJS implements ContactFormREST {
     try {
       await emailjs.send(serviceID, templateID, formData, userID);
     } catch (error) {
-      throw new Error(error.text);
+      throw new Error(error.text ?? "Error");
     }
   }
 }
