@@ -63,6 +63,7 @@ const pricing = computed((): string =>
   @apply border border-neutral-600 rounded-md;
   @apply p-9 h-[33.5rem] overflow-hidden;
   @apply flex flex-col justify-between;
+  @apply md:w-[26rem] md:shadow-lg;
 }
 .featured {
   @apply text-white;
