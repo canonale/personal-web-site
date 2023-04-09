@@ -25,7 +25,9 @@ const submitForm = async () => {
           We are really thankful for contacting us
         </h1>
       </div>
-      <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
+      <div
+        class="flex flex-col gap-4 md:grid md:grid-cols-2 xl:w-[53rem] xl:m-auto"
+      >
         <div v-for="field in inputFields" :key="field.name">
           <Input
             v-model:model-value="field.model"
