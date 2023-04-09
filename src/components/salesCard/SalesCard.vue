@@ -75,7 +75,7 @@ const pricing = computed((): string =>
   @apply rotate-45 absolute -right-14 -top-14 w-28 h-28;
   @apply flex items-end justify-center pb-1.5;
   @apply transition-all hover:-right-16 hover:w-[140px];
-  background: linear-gradient(136.57deg, #9747FF 20.31%, #47CAFF 100%);
+  background: linear-gradient(136.57deg, #9747ff 20.31%, #47caff 100%);
   box-shadow: inset 0px 0px 4px rgba(71, 202, 255, 0.62);
 }
 </style>

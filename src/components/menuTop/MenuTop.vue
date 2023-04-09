@@ -3,7 +3,6 @@ import MenuItem from "./MenuItem.vue";
 import SocialNetworks from "../menuTop/SocialNetworks.vue";
 import { computed, defineAsyncComponent, ref } from "vue";
 
-
 const menuItems = ["About me", "Pricing", "Plugins", "Resources"];
 const showMenu = ref(false);
 const iconComponent = computed(() => {

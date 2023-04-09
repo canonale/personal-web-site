@@ -16,7 +16,7 @@ defineProps<{
 </template>
 <style scoped>
 .emoji {
-  @apply  bg-zinc-800 p-3 w-fit text-3xl rounded-lg;
+  @apply bg-zinc-800 p-3 w-fit text-3xl rounded-lg;
 }
 .title {
   @apply text-base font-medium text-white;
