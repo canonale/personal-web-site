@@ -1,6 +1,6 @@
 <script setup lang="ts">
-interface MenuItemProps {
-  text: string
+export interface MenuItemProps {
+  text: string;
 }
 defineProps<MenuItemProps>();
 </script>

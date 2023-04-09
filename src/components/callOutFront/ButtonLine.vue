@@ -3,7 +3,7 @@ import Button from "../button/Button.vue";
 </script>
 <template>
   <div
-    class="grid grid-cols-2 gap-8 justify-items-center md:flex md:flex-row md:justify-center"
+    class="grid grid-cols-2 gap-8 justify-items-center md:flex md:flex-row md:justify-center xl:justify-start"
   >
     <Button :cta="true">Get Started</Button>
     <Button>Why Canonale?</Button>

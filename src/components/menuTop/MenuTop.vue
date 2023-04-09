@@ -17,14 +17,26 @@ const showHidenMenu = () => {
 
 <template>
   <div class="relative">
-    <div class="flex flex-row-reverse">
+    <div class="hidden lg:flex">
+      <menu class="flex flex-row items-center">
+        <ul class="flex flex-row gap-4 mr-4">
+          <MenuItem
+            v-for="(item, index) in menuItems"
+            :key="index"
+            :text="item"
+          />
+        </ul>
+        <social-networks />
+      </menu>
+    </div>
+    <div class="flex flex-row-reverse lg:hidden">
       <button @click="showHidenMenu" class="show-menu">
         <transition enter-from-class="opacity-0" leave-to-class="opacity-0">
           <component :is="iconComponent" />
         </transition>
       </button>
     </div>
-    <menu class="p-4 inset-x-0 fixed bg-gray-800" v-if="showMenu">
+    <menu class="p-4 inset-x-0 fixed bg-gray-800 lg:hidden" v-if="showMenu">
       <ul>
         <MenuItem
           v-for="(item, index) in menuItems"
