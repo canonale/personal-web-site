@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
-
 import { mount, flushPromises } from "@vue/test-utils";
 import MenuTop from "../menuTop/MenuTop.vue";
 import SocialNetworks from "../menuTop/SocialNetworks.vue";
+import { useMenuTop } from "../menuTop/menuTop";
 
 describe("Menu Top", () => {
   it("The component exists", () => {
@@ -20,10 +20,10 @@ describe("Menu Top", () => {
     expect(menuShown.exists()).toBeTruthy();
   });
   it("Item number", async () => {
+    const { menuItems } = useMenuTop();
     const wrapper = mount(MenuTop);
-    const menuItems: Array<string> = wrapper.vm.menuItems;
     await wrapper.find("button.show-menu").trigger("click");
-    const menuItemsHTML = wrapper.findAll("menu.mobile > ul > li");
+    const menuItemsHTML = wrapper.findAll("menu > ul > li");
     expect(menuItems.length).toBe(menuItemsHTML.length);
   });
   it.skip("Menu button changes when clicking on", async () => {
@@ -38,11 +38,14 @@ describe("Menu Top", () => {
     expect(toOpenIcon.exists()).toBeFalsy();
   });
   it("Social network icons exist", async () => {
+    const { showMenu } = useMenuTop();
     const wrapper = mount(MenuTop);
+    expect(wrapper.find("menu.mobile").exists()).toBeFalsy();
     await flushPromises();
-    wrapper.vm.showMenu = true;
+    showMenu.value = true;
     await flushPromises();
-    expect(wrapper.findComponent(SocialNetworks).exists()).toBeTruthy();
-    wrapper.vm.showMenu = false;
+    expect(
+      wrapper.find("menu.mobile").findComponent(SocialNetworks).exists()
+    ).toBeTruthy();
   });
 });

@@ -1,17 +1,9 @@
 <script setup lang="ts">
+import { useMenuTop } from "./menuTop";
 import MenuItem from "./MenuItem.vue";
 import SocialNetworks from "../menuTop/SocialNetworks.vue";
-import { computed, defineAsyncComponent, ref } from "vue";
 
-const menuItems = ["About me", "Pricing", "Plugins", "Resources"];
-const showMenu = ref(false);
-const iconComponent = computed(() => {
-  const icon = showMenu.value ? "IconXMark" : "IconBars3BottomRight";
-  return defineAsyncComponent(async () => await import(`../icons/${icon}.vue`));
-});
-const showHidenMenu = () => {
-  showMenu.value = !showMenu.value;
-};
+const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
 </script>
 
 <template>
