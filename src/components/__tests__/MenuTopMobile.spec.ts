@@ -14,7 +14,7 @@ describe("Menu Top", () => {
     const wrapper = mount(MenuTop);
     const menu = wrapper.find("menu");
     const buttonShowMenu = wrapper.find("button.show-menu");
-    expect(menu.exists()).toBeFalsy();
+    expect(menu.exists()).toBeTruthy();
     await buttonShowMenu.trigger("click");
     const menuShown = wrapper.find("menu");
     expect(menuShown.exists()).toBeTruthy();
@@ -23,7 +23,7 @@ describe("Menu Top", () => {
     const wrapper = mount(MenuTop);
     const menuItems: Array<string> = wrapper.vm.menuItems;
     await wrapper.find("button.show-menu").trigger("click");
-    const menuItemsHTML = wrapper.findAll("menu > ul > li");
+    const menuItemsHTML = wrapper.findAll("menu.mobile > ul > li");
     expect(menuItems.length).toBe(menuItemsHTML.length);
   });
   it.skip("Menu button changes when clicking on", async () => {

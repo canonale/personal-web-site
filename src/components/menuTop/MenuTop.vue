@@ -35,7 +35,10 @@ const showHidenMenu = () => {
         </transition>
       </button>
     </div>
-    <menu class="p-4 inset-x-0 fixed bg-gray-800 lg:hidden" v-if="showMenu">
+    <menu
+      class="mobile p-4 inset-x-0 fixed bg-gray-800 lg:hidden"
+      v-if="showMenu"
+    >
       <ul>
         <MenuItem
           v-for="(item, index) in menuItems"
