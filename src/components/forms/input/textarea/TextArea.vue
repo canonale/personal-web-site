@@ -4,7 +4,15 @@ export interface Props {
   placeholder: string;
 }
 defineProps<Props>();
-defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
+
+const onInput = (event: Event) => {
+  const { target } = event;
+  if (target) {
+    const value = (target as HTMLTextAreaElement).value;
+    emit("update:modelValue", value);
+  }
+};
 </script>
 
 <template>
@@ -12,6 +20,6 @@ defineEmits(["update:modelValue"]);
     :placeholder="placeholder"
     :value="modelValue"
     class="input h-32"
-    @input="$emit('update:modelValue', $event.target.value ?? '')"
+    @input="onInput($event)"
   />
 </template>

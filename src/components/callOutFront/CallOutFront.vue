@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import GradientTitle from "./GradientTitle.vue";
-import Logotype from "./Logotype.vue";
+import CanonaleLogotype from "./CanonaleLogotype.vue";
 import ButtonLine from "./ButtonLine.vue";
 </script>
 <template>
   <div class="my-20 xl:flex xl:flex-row-reverse container">
     <div class="flex justify-center xl:w-2/4">
-      <Logotype />
+      <canonale-logotype />
     </div>
     <div class="mt-10 flex flex-col gap-y-11 xl:gap-y-4 xl:w-2/4">
       <gradient-title>Canonale</gradient-title>

@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
 import CallOutFront from "../callOutFront/CallOutFront.vue";
-import Logotype from "../callOutFront/Logotype.vue";
+import CanonaleLogotype from "../callOutFront/CanonaleLogotype.vue";
 import GradientTitle from "../callOutFront/GradientTitle.vue";
 import ButtonLine from "../callOutFront/ButtonLine.vue";
 
@@ -11,9 +11,9 @@ describe("Menu Top", () => {
     const wrapper = mount(CallOutFront);
     expect(wrapper.exists()).toBe(true);
   });
-  it("Logotype exists", () => {
+  it("CanonaleLogotype exists", () => {
     const wrapper = mount(CallOutFront);
-    expect(wrapper.findComponent(Logotype).exists()).toBe(true);
+    expect(wrapper.findComponent(CanonaleLogotype).exists()).toBe(true);
   });
   it("Gradient title exists", () => {
     const slotText = "Canonale";

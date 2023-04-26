@@ -1,16 +1,16 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
-import Button from "../button/Button.vue";
+import ButtonCta from "../button/ButtonCta.vue";
 
 const slotText = "Click me";
 
 describe("Button component tests", () => {
   it("Button exists", () => {
-    const wrapper = shallowMount(Button);
+    const wrapper = shallowMount(ButtonCta);
     expect(wrapper.exists()).toBeTruthy();
   });
   it("Check button slot", () => {
-    const wrapper = shallowMount(Button, {
+    const wrapper = shallowMount(ButtonCta, {
       slots: {
         default: slotText,
       },
@@ -22,7 +22,7 @@ describe("Button component tests", () => {
 
   it("Check button props", () => {
     const factory = (cta: boolean) => {
-      return mount(Button, {
+      return mount(ButtonCta, {
         props: {
           cta: cta,
         },
@@ -35,7 +35,7 @@ describe("Button component tests", () => {
   });
   it("Check button disabled prop", () => {
     const factory = (disabled: boolean) => {
-      return mount(Button, {
+      return mount(ButtonCta, {
         props: {
           cta: true,
           disabled: disabled,

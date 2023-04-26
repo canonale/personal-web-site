@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Button from "@/components/button/Button.vue";
+import ButtonCta from "@/components/button/ButtonCta.vue";
 import { computed } from "vue";
-import Input from "../input/Input.vue";
+import InputText from "../input/InputText.vue";
 import TextArea from "../input/textarea/TextArea.vue";
 import { useContactForm } from "./contactForm";
 
@@ -29,7 +29,7 @@ const submitForm = async () => {
         class="flex flex-col gap-4 md:grid md:grid-cols-2 xl:w-[53rem] xl:m-auto"
       >
         <div v-for="field in inputFields" :key="field.name">
-          <Input
+          <input-text
             v-model:model-value="field.model"
             :required="field.require"
             :placeholder="field.name"
@@ -47,12 +47,12 @@ const submitForm = async () => {
           />
         </div>
         <div class="md:col-span-2 md:flex md:justify-center">
-          <Button
+          <button-cta
             class="w-full md:w-2/4"
             :cta="true"
             :disabled="!isSubmitable"
             type="submit"
-            >Send</Button
+            >Send</button-cta
           >
         </div>
       </div>

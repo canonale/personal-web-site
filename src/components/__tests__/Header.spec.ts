@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import HeaderMain from "../header/HeaderMain.vue";
 import MenuTopVue from "../menuTop/MenuTop.vue";
-import Logotype from "../logotype/Logotype.vue";
+import CanonaleLogotype from "../logotype/CanonaleLogotype.vue";
 
 describe("Menu Top", () => {
   it("The component exists", () => {
@@ -16,6 +16,6 @@ describe("Menu Top", () => {
   });
   it("Logo exists", () => {
     const wrapper = mount(HeaderMain);
-    expect(wrapper.findComponent(Logotype).exists()).toBe(true);
+    expect(wrapper.findComponent(CanonaleLogotype).exists()).toBe(true);
   });
 });

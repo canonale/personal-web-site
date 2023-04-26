@@ -4,7 +4,7 @@ import FeatureCardCollection from "./components/featureCard/FeatureCardCollectio
 import HeaderMain from "./components/header/HeaderMain.vue";
 import SalesCardCollection from "./components/salesCard/SalesCardCollection.vue";
 import ContactForm from "./components/forms/forms/ContactForm.vue";
-import Footer from "./components/footer/Footer.vue";
+import FooterWeb from "./components/footer/FooterWeb.vue";
 </script>
 
 <template>
@@ -17,7 +17,7 @@ import Footer from "./components/footer/Footer.vue";
     </div>
     <div>
       <contact-form />
-      <Footer />
+      <footer-web />
     </div>
   </div>
 </template>

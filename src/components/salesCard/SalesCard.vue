@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Button from "../button/Button.vue";
+import ButtonCta from "../button/ButtonCta.vue";
 import {
   BUTTON_TEXT,
   FREE_TEXT,
@@ -50,7 +50,7 @@ const pricing = computed((): string =>
       </ul>
     </div>
     <div>
-      <Button class="w-full">{{ BUTTON_TEXT }}</Button>
+      <button-cta class="w-full">{{ BUTTON_TEXT }}</button-cta>
     </div>
   </div>
 </template>
