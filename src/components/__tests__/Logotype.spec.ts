@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
-import LogoType from "../logotype/LogoType.vue";
-import IconLogo from "../icons/IconLogo.vue";
+import LogoType from "@/components/logotype/LogoType.vue";
+import IconLogo from "@/components/icons/IconLogo.vue";
 
 describe("Menu Top", () => {
   it("The component exists", () => {
