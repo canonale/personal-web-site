@@ -1,4 +1,4 @@
-import emailjs from "@emailjs/browser";
+import emailjs, { type EmailJSResponseStatus } from "@emailjs/browser";
 
 export interface ContactFormREST {
   fields: string[];
@@ -25,7 +25,8 @@ export class ContactFormEmailJS implements ContactFormREST {
     try {
       await emailjs.send(serviceID, templateID, formData, userID);
     } catch (error) {
-      throw new Error(error.text ?? "Error");
+      const erHand: EmailJSResponseStatus = error as EmailJSResponseStatus;
+      throw new Error(erHand.text ?? "Error");
     }
   }
 }

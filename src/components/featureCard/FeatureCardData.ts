@@ -1,4 +1,8 @@
-import type { FeatureCardDataInterface } from "./FeatureCard";
+interface FeatureCardDataInterface {
+  title: string;
+  subTitle: string;
+  emoji: string;
+}
 
 export const data: Array<FeatureCardDataInterface> = [
   {

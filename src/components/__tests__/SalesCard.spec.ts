@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
-import ButtonVue from "../button/Button.vue";
+import ButtonVue from "../button/ButtonCta.vue";
 import SalesCard from "../salesCard/SalesCard.vue";
 import {
   FREE_TEXT,

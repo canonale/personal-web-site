@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import HeaderMain from "../header/HeaderMain.vue";
 import MenuTopVue from "../menuTop/MenuTop.vue";
-import CanonaleLogotype from "../logotype/CanonaleLogotype.vue";
+import CanonaleLogotype from "../logotype/LogoType.vue";
 
 describe("Menu Top", () => {
   it("The component exists", () => {
