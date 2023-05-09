@@ -13,7 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     strategy:
       matrix:
         node-version: [18.x, 19.x]
@@ -30,3 +32,10 @@ jobs:
     # - run: npm run lint
     - run: npm run test:unit
     - run: npm run build --if-present
+    - name: Deploy
+      uses: reggionick/s3-deploy@v3
+      with:
+        folder: dist
+        bucket: ${{ secrets.S3_BUCKET }}
+        bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+        files-to-include: ".*/*,*/*,**"
