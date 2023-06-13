@@ -64,7 +64,13 @@ const submitForm = async () => {
 .contact-form-div {
   @apply px-2 py-16;
   @apply md:px-4;
-  @apply bg-gradient-to-t from-neutral-700 via-neutral-800 to-neutral-800;
-  box-shadow: inset 0px 0px 40px #000000;
+  @apply dark:bg-gradient-to-t dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-800;
+  box-shadow: inset 0px 0px 80px #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-form-div {
+    box-shadow: inset 0px 0px 40px #000000;
+  }
 }
 </style>

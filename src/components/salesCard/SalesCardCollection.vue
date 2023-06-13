@@ -4,7 +4,7 @@ import { salesCardData, PRICING_TITLE } from "./SalesCardData";
 </script>
 
 <template>
-  <div class="mt-16 pt-16 border-t border-neutral-600">
+  <div class="mt-16 pt-16 border-t dark:border-neutral-600 border-neutral-100">
     <div class="py-4 px-2">
       <h1 class="main-title text-center">{{ PRICING_TITLE }}</h1>
     </div>

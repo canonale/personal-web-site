@@ -57,14 +57,16 @@ const pricing = computed((): string =>
 
 <style scoped>
 .sales-card {
-  @apply relative;
-  @apply text-neutral-300;
-  @apply bg-gray-800 hover:bg-neutral-900;
+  @apply relative rounded-md;
+  @apply text-neutral-600;
+  @apply bg-gray-50 hover:bg-neutral-100;
   @apply duration-700 transition-all hover:scale-105;
-  @apply border border-neutral-600 rounded-md;
   @apply p-9 h-[33.5rem] overflow-hidden;
   @apply flex flex-col justify-between;
   @apply md:w-[26rem];
+  @apply dark:text-neutral-300;
+  @apply dark:border dark:border-neutral-600;
+  @apply dark:bg-gray-800 dark:hover:bg-neutral-900;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.36);
 }
 .sales-card:hover {

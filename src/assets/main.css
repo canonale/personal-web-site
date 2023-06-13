@@ -15,10 +15,14 @@ h1.main-title {
 
 .input {
   @apply px-6 py-3 rounded;
-  @apply bg-neutral-800 border border-neutral-700 w-full;
-  @apply placeholder:italic placeholder:text-neutral-700;
-  @apply text-sm leading-6 text-neutral-400;
+  @apply w-full border;
+  @apply bg-neutral-50 border-neutral-100 text-neutral-500;
+  @apply placeholder:italic;
+  @apply text-sm leading-6;
   @apply focus:outline-none focus:ring-0;
+  @apply dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400;
+  @apply dark:placeholder:text-neutral-700;
+
 }
 
 .input:focus {

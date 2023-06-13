@@ -26,7 +26,7 @@ const buttonType = computed((): string => {
 </script>
 <template>
   <button
-    class="border rounded-full text-sm px-5 leading-10"
+    class="border rounded-full text-sm px-5 leading-10 text-white"
     :disabled="disabled"
     :class="buttonType"
     :type="type"

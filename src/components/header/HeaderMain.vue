@@ -4,7 +4,9 @@ import LogoType from "@/components/logotype/LogoType.vue";
 </script>
 
 <template>
-  <div class="flex p-2 justify-between items-center bg-gray-800 z-20 relative">
+  <div
+    class="flex p-2 justify-between items-center dark:bg-gray-800 z-20 relative"
+  >
     <div>
       <logo-type />
     </div>

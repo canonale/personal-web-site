@@ -6,7 +6,7 @@ defineProps<{
 }>();
 </script>
 <template>
-  <div class="hover:bg-zinc-600 bg-zinc-700 p-6 flex flex-col gap-4 rounded-lg">
+  <div class="feature-card">
     <div class="emoji">
       {{ emoji }}
     </div>
@@ -15,13 +15,18 @@ defineProps<{
   </div>
 </template>
 <style scoped>
+.feature-card {
+  @apply bg-gray-100 hover:bg-gray-200;
+  @apply dark:hover:bg-zinc-600 dark:bg-zinc-700;
+  @apply p-6 flex flex-col gap-4 rounded-lg;
+}
 .emoji {
-  @apply bg-zinc-800 p-3 w-fit text-3xl rounded-lg;
+  @apply dark:bg-zinc-800 bg-gray-300 p-3 w-fit text-3xl rounded-lg;
 }
 .title {
-  @apply text-base font-medium text-white;
+  @apply text-base font-medium dark:text-white text-gray-600;
 }
 .subTitle {
-  @apply text-sm text-white font-normal;
+  @apply text-sm dark:text-white text-gray-400 font-normal;
 }
 </style>
