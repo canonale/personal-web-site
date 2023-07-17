@@ -21,7 +21,7 @@ export const routes = [
   {
     path: "/about-me",
     name: RouteNames.ABOUT_ME,
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/AboutMeView.vue"),
   },
 ];
 export const router = createRouter({
