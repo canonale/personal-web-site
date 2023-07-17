@@ -14,7 +14,8 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
           <MenuItem
             v-for="(item, index) in menuItems"
             :key="index"
-            :text="item"
+            :text="item.text"
+            :route="item.route"
           />
         </ul>
         <social-networks />
@@ -35,7 +36,8 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
         <MenuItem
           v-for="(item, index) in menuItems"
           :key="index"
-          :text="item"
+          :text="item.text"
+          :route="item.route"
         />
       </ul>
       <social-networks />

@@ -1,10 +1,12 @@
 import MenuItem from "../menuTop/MenuItem.vue";
 import { describe, it, expect } from "vitest";
-import { mount, VueWrapper } from "@vue/test-utils";
-const menuItemFactory = (text: string): VueWrapper => {
-  return mount(MenuItem, {
+import { shallowMount, VueWrapper } from "@vue/test-utils";
+
+const menuItemFactory = (text: string, route?: string): VueWrapper => {
+  return shallowMount(MenuItem, {
     props: {
       text: text,
+      route: route,
     },
   });
 };
