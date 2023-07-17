@@ -28,7 +28,7 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
       </button>
     </div>
     <menu
-      class="mobile p-4 inset-x-0 fixed bg-gray-800 lg:hidden"
+      class="mobile p-4 inset-x-0 fixed bg-white mt-[13px] dark:bg-gray-800 lg:hidden"
       v-if="showMenu"
     >
       <ul>

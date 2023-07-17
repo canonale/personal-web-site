@@ -35,13 +35,14 @@ window.addEventListener("scroll", handleScroll);
 .header {
   @apply fixed top-0 left-0 right-0 z-20;
   @apply transition-colors duration-500;
+  @apply lg:bg-transparent bg-white border-b lg:border-none;
 }
 .header-container {
  @apply flex p-2 justify-between items-center;
  @apply max-w-[1376px] m-auto;
 }
 .fixed-header {
-  @apply bg-white border-b border-gray-200;
+  @apply bg-white lg:border-b lg:border-solid border-gray-200;
   @apply dark:bg-gray-800 dark:border-gray-900;
 }
 </style>
