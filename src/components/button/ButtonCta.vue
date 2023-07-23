@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { router } from "@/router";
 import { computed, type ButtonHTMLAttributes } from "vue";
 export interface Props {
   cta?: boolean;
   disabled?: boolean;
   type?: ButtonHTMLAttributes["type"];
+  route?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -23,6 +25,12 @@ const buttonType = computed((): string => {
   } hover:bg-slate-600 border-slate-600`;
   return type ? indigoClasses : slateClasses;
 });
+
+const goToRoute = () => {
+  router.push({
+    name: props.route,
+  });
+};
 </script>
 <template>
   <button
@@ -30,6 +38,7 @@ const buttonType = computed((): string => {
     :disabled="disabled"
     :class="buttonType"
     :type="type"
+    @click="goToRoute"
   >
     <slot></slot>
   </button>
