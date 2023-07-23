@@ -35,7 +35,8 @@ window.addEventListener("scroll", handleScroll);
 .header {
   @apply fixed top-0 left-0 right-0 z-20;
   @apply transition-colors duration-500;
-  @apply lg:bg-transparent bg-white border-b lg:border-none;
+  @apply lg:bg-transparent dark:bg-gray-800 bg-white;
+  @apply border-b lg:border-none dark:border-none;
 }
 .header-container {
  @apply flex p-2 justify-between items-center;
