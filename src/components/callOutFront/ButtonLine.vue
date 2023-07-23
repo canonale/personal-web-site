@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouteNames } from "@/router";
+import RouteNames from "@/router/routeNames";
 import ButtonCta from "../button/ButtonCta.vue";
 </script>
 <template>
@@ -8,6 +8,8 @@ import ButtonCta from "../button/ButtonCta.vue";
   >
     <button-cta :cta="true">Get Started</button-cta>
     <button-cta :route="RouteNames.ABOUT_ME">Why Canonale?</button-cta>
-    <button-cta class="col-span-2">View on GitHub</button-cta>
+    <button-cta class="col-span-2" :route="RouteNames.GITHUB"
+      >View on GitHub</button-cta
+    >
   </div>
 </template>

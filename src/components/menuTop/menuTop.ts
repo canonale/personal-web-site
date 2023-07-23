@@ -1,5 +1,5 @@
 import { computed, defineAsyncComponent, ref } from "vue";
-import { RouteNames } from "@/router";
+import RouteNames from "@/router/routeNames";
 
 export interface MenuItem {
   text: string;
@@ -13,7 +13,7 @@ const menuItems: Array<MenuItem> = [
   },
   {
     text: "Pricing",
-    route: RouteNames.HOME,
+    route: "twitter",
   },
   {
     text: "Plugins",

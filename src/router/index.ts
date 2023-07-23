@@ -1,13 +1,13 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  type RouteRecordRaw,
+} from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ExternalRoutes from "./externalRoutes";
+import RouteNames from "./routeNames";
 
-export const RouteNames = {
-  HOME: "home",
-  ABOUT: "about",
-  ABOUT_ME: "about-me",
-};
-
-export const routes = [
+export const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: RouteNames.HOME,
@@ -23,6 +23,7 @@ export const routes = [
     name: RouteNames.ABOUT_ME,
     component: () => import("../views/AboutMeView.vue"),
   },
+  ...ExternalRoutes,
 ];
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

@@ -2,16 +2,20 @@
 import IconTwitter from "../icons/IconTwitter.vue";
 import IconDiscord from "../icons/IconDiscord.vue";
 import IconGithub from "../icons/IconGithub.vue";
+import routeNames from "@/router/routeNames";
+import { router } from "@/router";
 
-const goToGitHub = () => {
-  window.location.href = "https://github.com/canonale";
+const goTo = (routeName: string) => {
+  router.push({
+    name: routeName,
+  });
 };
 </script>
 <template>
   <div class="flex">
-    <icon-twitter class="mr-2 network-icon" />
+    <icon-twitter @click="goTo(routeNames.TWITTER)" class="mr-2 network-icon" />
     <icon-discord class="mr-2 network-icon" />
-    <icon-github @click="goToGitHub" class="network-icon" />
+    <icon-github @click="goTo(routeNames.GITHUB)" class="network-icon" />
   </div>
 </template>
 

@@ -39,8 +39,8 @@ window.addEventListener("scroll", handleScroll);
   @apply border-b lg:border-none dark:border-none;
 }
 .header-container {
- @apply flex p-2 justify-between items-center;
- @apply max-w-[1376px] m-auto;
+  @apply flex p-2 justify-between items-center;
+  @apply max-w-[1376px] m-auto;
 }
 .fixed-header {
   @apply bg-white lg:border-b lg:border-solid border-gray-200;
