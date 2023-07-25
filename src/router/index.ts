@@ -24,8 +24,13 @@ export const routes: RouteRecordRaw[] = [
     component: () => import("../views/AboutMeView.vue"),
   },
   {
-    path: "/#pricing",
+    path: "/",
     name: RouteNames.PRICING,
+    component: HomeView,
+  },
+  {
+    path: "/",
+    name: RouteNames.RESOURCES,
     component: HomeView,
   },
   ...ExternalRoutes,
@@ -33,4 +38,13 @@ export const routes: RouteRecordRaw[] = [
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior: (to) => {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth",
+      };
+    }
+    return { top: 0 };
+  },
 });

@@ -2,13 +2,14 @@
 export interface MenuItemProps {
   text: string;
   route?: string;
+  hash?: string;
 }
 defineProps<MenuItemProps>();
 </script>
 
 <template>
   <li class="my-4">
-    <router-link class="menu-item" :to="{ name: route }">{{
+    <router-link class="menu-item" :to="{ name: route, hash: hash }">{{
       text
     }}</router-link>
   </li>

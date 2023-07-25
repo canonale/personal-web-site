@@ -5,6 +5,7 @@ const RouteNames = {
   TWITTER: "twitter",
   GITHUB: "github",
   PRICING: "pricing",
+  RESOURCES: "resources",
 };
 
 export default RouteNames;

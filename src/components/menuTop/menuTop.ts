@@ -4,6 +4,7 @@ import RouteNames from "@/router/routeNames";
 export interface MenuItem {
   text: string;
   route?: string;
+  hash?: string;
 }
 const showMenu = ref(false);
 const menuItems: Array<MenuItem> = [
@@ -14,14 +15,12 @@ const menuItems: Array<MenuItem> = [
   {
     text: "Pricing",
     route: RouteNames.PRICING,
-  },
-  {
-    text: "Plugins",
-    route: RouteNames.HOME,
+    hash: "#pricing",
   },
   {
     text: "Resources",
-    route: RouteNames.HOME,
+    route: RouteNames.RESOURCES,
+    hash: "#resources",
   },
 ];
 

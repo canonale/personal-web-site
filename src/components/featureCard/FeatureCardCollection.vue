@@ -5,6 +5,7 @@ import { data } from "./FeatureCardData";
 <template>
   <div
     class="flex flex-col gap-4 md:grid md:grid-cols-2 xl:grid-cols-3 container"
+    id="resources"
   >
     <FeatureCard
       v-for="(card, key) in data"
