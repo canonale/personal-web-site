@@ -16,6 +16,10 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      VITE_USER_ID: ${{ vars.VITE_USER_ID }}
+      VITE_SERVICE_ID: ${{ vars.VITE_SERVICE_ID }}
+      VITE_TEMPLATE_ID: ${{ vars.VITE_TEMPLATE_ID }}
+      VITE_GA_CODE: ${{ vars.VITE_GA_CODE }}
     strategy:
       matrix:
         node-version: [18.x]
