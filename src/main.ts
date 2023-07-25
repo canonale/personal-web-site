@@ -2,7 +2,8 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import App from "./App.vue";
 import { router } from "./router";
-import useAnalytics from "@/plugins/gAnalytics";
+
+import VueGtag from "vue-gtag-next";
 
 import "./assets/main.css";
 
@@ -10,6 +11,14 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-useAnalytics(app);
+
+const gaCode = import.meta.env.VITE_GA_CODE;
+
+console.log("CODE: ", gaCode);
+app.use(VueGtag, {
+  property: {
+    id: gaCode,
+  },
+});
 
 app.mount("#app");
