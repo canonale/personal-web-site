@@ -1,5 +1,8 @@
+<script setup lang="ts">
+import IconOpenIA from "@/components/icons/IconOpenIA.vue";
+</script>
 <template>
-  <div class="my-20 py-20 container">
+  <div class="my-20 py-20 px-4 xl:px-0 container">
     <h1>About Me</h1>
     <h2>A full-stack engineer a background of years.</h2>
     <p>Hello, welcome to my tech world!</p>
@@ -54,5 +57,10 @@
       to connect with you! Welcome to this thrilling tech journey. Let's explore
       together!
     </p>
+    <div class="mt-8">
+      <p class="text-center text-gray-400">
+        Made with <IconOpenIA class="w-8 inline" />
+      </p>
+    </div>
   </div>
 </template>

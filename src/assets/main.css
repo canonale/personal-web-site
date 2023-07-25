@@ -38,7 +38,7 @@ h2 {
 }
 
 p {
-  @apply leading-6 text-base my-2;
+  @apply leading-7 text-base my-2;
 
 }
 .input:focus {

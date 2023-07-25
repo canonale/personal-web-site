@@ -23,9 +23,14 @@ export const routes: RouteRecordRaw[] = [
     name: RouteNames.ABOUT_ME,
     component: () => import("../views/AboutMeView.vue"),
   },
+  {
+    path: "/#pricing",
+    name: RouteNames.PRICING,
+    component: HomeView,
+  },
   ...ExternalRoutes,
 ];
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: routes,
+  routes,
 });

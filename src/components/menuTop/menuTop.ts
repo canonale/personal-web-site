@@ -13,7 +13,7 @@ const menuItems: Array<MenuItem> = [
   },
   {
     text: "Pricing",
-    route: "twitter",
+    route: RouteNames.PRICING,
   },
   {
     text: "Plugins",
