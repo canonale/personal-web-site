@@ -14,7 +14,7 @@ app.use(router);
 
 const gaCode = import.meta.env.VITE_GA_CODE;
 
-console.log("CODE: ", gaCode);
+console.log("CODE: ", import.meta.env);
 app.use(VueGtag, {
   property: {
     id: gaCode,
