@@ -22,6 +22,11 @@ const menuItems: Array<MenuItem> = [
     route: RouteNames.RESOURCES,
     hash: "#resources",
   },
+  {
+    text: "Contact me",
+    route: RouteNames.CONTACT,
+    hash: "#contact",
+  },
 ];
 
 const iconComponent = computed(() => {

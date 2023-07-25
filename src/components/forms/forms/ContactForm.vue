@@ -18,7 +18,7 @@ const submitForm = async () => {
 };
 </script>
 <template>
-  <div class="contact-form-div">
+  <div class="contact-form-div" id="contact">
     <form ref="form" @submit.prevent="submitForm">
       <div class="mt-4 mb-8">
         <h1 class="text-5xl text-neutral-400 text-center">

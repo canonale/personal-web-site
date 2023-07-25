@@ -17,7 +17,7 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
             :text="item.text"
             :route="item.route"
             :hash="item.hash"
-            />
+          />
         </ul>
         <social-networks />
       </menu>
@@ -40,7 +40,7 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
           :text="item.text"
           :route="item.route"
           :hash="item.hash"
-          />
+        />
       </ul>
       <social-networks />
     </menu>

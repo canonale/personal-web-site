@@ -33,6 +33,11 @@ export const routes: RouteRecordRaw[] = [
     name: RouteNames.RESOURCES,
     component: HomeView,
   },
+  {
+    path: "/",
+    name: RouteNames.CONTACT,
+    component: HomeView,
+  },
   ...ExternalRoutes,
 ];
 export const router = createRouter({

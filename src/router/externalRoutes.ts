@@ -16,6 +16,10 @@ const locations: ExternalRoute[] = [
     domain: "github.com/canonale",
     name: RouteNames.GITHUB,
   },
+  {
+    domain: "instagram.com/canonale",
+    name: RouteNames.INSTAGRAM,
+  },
 ];
 
 const routes: RouteRecordRaw[] = locations.map((item: ExternalRoute) => {

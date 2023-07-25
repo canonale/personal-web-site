@@ -6,6 +6,7 @@ export interface Props {
   disabled?: boolean;
   type?: ButtonHTMLAttributes["type"];
   route?: string;
+  hash?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -29,6 +30,7 @@ const buttonType = computed((): string => {
 const goToRoute = () => {
   router.push({
     name: props.route,
+    hash: props.hash,
   });
 };
 </script>
