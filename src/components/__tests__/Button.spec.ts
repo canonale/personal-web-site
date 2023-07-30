@@ -1,8 +1,12 @@
 import { mount, shallowMount } from "@vue/test-utils";
-import { describe, expect, it } from "vitest";
-import ButtonCta from "../button/ButtonCta.vue";
+import { describe, expect, it, vi, type Mock, type Mocked } from "vitest";
+import ButtonCta, { type ButtonCtaProps } from "../button/ButtonCta.vue";
+import * as useButtonCta from "@/components/button/buttonCta";
+import RouteNames from "@/router/routeNames";
 
 const slotText = "Click me";
+const buttonTypeMock = "";
+const goToRouteMock = vi.fn();
 
 describe("Button component tests", () => {
   it("Button exists", () => {
@@ -46,5 +50,24 @@ describe("Button component tests", () => {
     expect(wrapper.find("button").classes()).toContain("bg-indigo-300");
     wrapper = factory(false);
     expect(wrapper.find("button").classes()).toContain("bg-indigo-500");
+  });
+  it("Click on button", async () => {
+    const props: ButtonCtaProps = {
+      route: RouteNames.ABOUT_ME,
+    };
+    vi.spyOn(useButtonCta, "default" as never).mockReturnValue({
+      buttonType: buttonTypeMock,
+      goToRoute: goToRouteMock,
+    });
+    const wrapper = shallowMount(ButtonCta, {
+      props: props,
+      slots: {
+        default: slotText,
+      },
+    });
+    const button = wrapper.find("button");
+    await button.trigger("click");
+
+    expect(goToRouteMock).toHaveBeenCalledTimes(1);
   });
 });
