@@ -29,3 +29,12 @@ const { buttonType, goToRoute } = useButtonCta(props);
     <slot></slot>
   </button>
 </template>
+
+<style scoped>
+.cta-type {
+  @apply bg-indigo-500 hover:bg-indigo-400 border-indigo-400;
+}
+.no-cta-type {
+  @apply hover:bg-slate-600 border-slate-600;
+}
+</style>

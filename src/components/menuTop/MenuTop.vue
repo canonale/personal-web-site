@@ -22,11 +22,9 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
         <social-networks />
       </menu>
     </div>
-    <div class="flex flex-row-reverse lg:hidden">
+    <div class="flex flex-row-reverse h-[44px] lg:hidden">
       <button @click="showHidenMenu" class="show-menu">
-        <transition enter-from-class="opacity-0" leave-to-class="opacity-0">
-          <component :is="iconComponent" />
-        </transition>
+        <component :is="iconComponent" />
       </button>
     </div>
     <menu

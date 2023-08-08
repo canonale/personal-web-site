@@ -6,13 +6,9 @@ const useButtonCta = (props: ButtonCtaProps) => {
   const buttonType = computed((): string => {
     const type = props.cta ?? false;
     const isDisabled = props.disabled ?? false;
-    const indigoClasses = `bg-indigo-${
-      isDisabled ? "300" : "500"
-    } hover:bg-indigo-400 border-indigo-400`;
-    const slateClasses = `bg-slate-${
-      isDisabled ? "400" : "700"
-    } hover:bg-slate-600 border-slate-600`;
-    return type ? indigoClasses : slateClasses;
+    const ctaClasses = `bg-indigo-${isDisabled ? "300" : "500"} cta-type`;
+    const noCtaClasses = `bg-slate-${isDisabled ? "400" : "700"} no-cta-type`;
+    return type ? ctaClasses : noCtaClasses;
   });
 
   const goToRoute = () => {
