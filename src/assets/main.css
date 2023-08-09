@@ -52,3 +52,13 @@ p {
   margin-right: auto;
   max-width: 1152px;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition-all duration-200 ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0 scale-75;
+}

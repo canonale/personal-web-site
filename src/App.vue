@@ -6,7 +6,11 @@ import FooterWeb from "@/components/footer/FooterWeb.vue";
 <template>
   <div>
     <header-main />
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <div>
       <footer-web />
     </div>
