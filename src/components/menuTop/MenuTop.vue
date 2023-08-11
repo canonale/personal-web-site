@@ -3,7 +3,8 @@ import { useMenuTop } from "./menuTop";
 import MenuItem from "./MenuItem.vue";
 import SocialNetworks from "../menuTop/SocialNetworks.vue";
 
-const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
+const { menuItems, showHidenMenu, showMenu, iconComponent, itemWasClicked } =
+  useMenuTop();
 </script>
 
 <template>
@@ -34,6 +35,7 @@ const { menuItems, showHidenMenu, showMenu, iconComponent } = useMenuTop();
       <ul>
         <MenuItem
           v-for="(item, index) in menuItems"
+          @clicked="itemWasClicked"
           :key="index"
           :text="item.text"
           :route="item.route"

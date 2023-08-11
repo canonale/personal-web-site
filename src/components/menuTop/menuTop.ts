@@ -37,11 +37,16 @@ const showHidenMenu = () => {
   showMenu.value = !showMenu.value;
 };
 
+const itemWasClicked = () => {
+  showHidenMenu();
+};
+
 export const useMenuTop = () => {
   return {
     showMenu,
     menuItems,
     iconComponent,
     showHidenMenu,
+    itemWasClicked,
   };
 };

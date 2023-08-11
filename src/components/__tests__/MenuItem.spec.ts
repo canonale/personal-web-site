@@ -22,3 +22,14 @@ describe("Menu item", () => {
     expect(anchor.text()).eq("About me");
   });
 });
+
+describe("Menu item click", () => {
+  it("On click emit event", async () => {
+    const wrapper = menuItemFactory("About me");
+    const div = wrapper.find("div");
+    expect(div.exists()).toBeTruthy();
+    await div.trigger("click");
+    const emmit = wrapper.emitted();
+    expect(emmit.clicked).toBeTruthy();
+  });
+});
