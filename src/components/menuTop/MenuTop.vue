@@ -28,21 +28,23 @@ const { menuItems, showHidenMenu, showMenu, iconComponent, itemWasClicked } =
         <component :is="iconComponent" />
       </button>
     </div>
-    <menu
-      class="mobile p-4 inset-x-0 fixed bg-white mt-[13px] dark:bg-gray-800 lg:hidden"
-      v-if="showMenu"
-    >
-      <ul>
-        <MenuItem
-          v-for="(item, index) in menuItems"
-          @clicked="itemWasClicked"
-          :key="index"
-          :text="item.text"
-          :route="item.route"
-          :hash="item.hash"
-        />
-      </ul>
-      <social-networks />
-    </menu>
+    <transition name="fade">
+      <menu
+        class="mobile p-4 inset-x-0 fixed bg-white mt-[9px] dark:bg-gray-800 lg:hidden"
+        v-if="showMenu"
+      >
+        <ul>
+          <MenuItem
+            v-for="(item, index) in menuItems"
+            @clicked="itemWasClicked"
+            :key="index"
+            :text="item.text"
+            :route="item.route"
+            :hash="item.hash"
+          />
+        </ul>
+        <social-networks />
+      </menu>
+    </transition>
   </div>
 </template>
