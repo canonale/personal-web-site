@@ -10,6 +10,7 @@ const useAnalytics = (app: App<Element>) => {
       property: {
         id: gaCode,
       },
+      isEnabled: false,
     });
   }
 };
