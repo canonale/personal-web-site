@@ -5,6 +5,7 @@ import useButtonCta from "./buttonCta";
 export interface ButtonCtaProps {
   cta?: boolean;
   disabled?: boolean;
+  size?: "normal" | "small";
   type?: ButtonHTMLAttributes["type"];
   route?: string;
   hash?: string;
@@ -14,15 +15,16 @@ const props = withDefaults(defineProps<ButtonCtaProps>(), {
   cta: false,
   disabled: false,
   type: "button",
+  size: "normal",
 });
 
-const { buttonType, goToRoute } = useButtonCta(props);
+const { buttonType, buttonSize, goToRoute } = useButtonCta(props);
 </script>
 <template>
   <button
-    class="border rounded-full text-sm px-5 leading-10 text-white"
+    class="border rounded-full text-sm text-white"
     :disabled="disabled"
-    :class="buttonType"
+    :class="[buttonType, buttonSize]"
     :type="type"
     @click="goToRoute"
   >

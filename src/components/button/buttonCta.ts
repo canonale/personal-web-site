@@ -11,6 +11,10 @@ const useButtonCta = (props: ButtonCtaProps) => {
     return type ? ctaClasses : noCtaClasses;
   });
 
+  const buttonSize = computed((): string => {
+    return props.size == "normal" ? "px-5 leading-10" : "px-2 leading-6";
+  });
+
   const goToRoute = () => {
     router.push({
       name: props.route,
@@ -19,6 +23,7 @@ const useButtonCta = (props: ButtonCtaProps) => {
   };
   return {
     buttonType,
+    buttonSize,
     goToRoute,
   };
 };
