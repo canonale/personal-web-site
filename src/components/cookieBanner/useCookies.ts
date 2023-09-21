@@ -4,12 +4,12 @@ import { useState } from "vue-gtag-next";
 
 const allowCookies = ref<boolean>();
 
-const COOKIE_YEARS_AVAILABLE = 1;
+const COOKIE_MONTHS_AVAILABLE = 3;
 const COOKIE_NAME = "cookies_consent";
 
 const getCookieDate = (): Date => {
   const today = new Date();
-  today.setFullYear(today.getFullYear() + COOKIE_YEARS_AVAILABLE);
+  today.setMonth(today.getMonth() + COOKIE_MONTHS_AVAILABLE);
   return today;
 };
 
