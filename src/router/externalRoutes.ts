@@ -13,7 +13,7 @@ const locations: ExternalRoute[] = [
     name: RouteNames.TWITTER,
   },
   {
-    domain: "github.com/canonale",
+    domain: "github.com/canonale/personal-web-site",
     name: RouteNames.GITHUB,
   },
   {
