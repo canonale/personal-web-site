@@ -33,7 +33,7 @@ h1 {
 }
 
 h2 {
-  @apply text-slate-400 text-2xl my-2;
+  @apply text-slate-400 text-2xl mt-4 mb-2;
 
 }
 
@@ -43,7 +43,7 @@ h3 {
 }
 
 p {
-  @apply leading-7 text-base my-2;
+  @apply leading-7 text-base my-2 text-gray-800 dark:text-white;
 
 }
 .input:focus {

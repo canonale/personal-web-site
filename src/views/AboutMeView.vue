@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import IconOpenIA from "@/components/icons/IconOpenIA.vue";
+import IconEmail from "@/components/icons/IconEmail.vue";
+import IconPhone from "@/components/icons/IconPhone.vue";
+import IconPin from "@/components/icons/IconPin.vue";
 </script>
 <template>
   <div class="my-20 py-20 px-4 xl:px-0 container">
-    <h1>About Me</h1>
+    <h1 class="main-title mb-8">About Me</h1>
     <h2 id="adri-n-garc-a-casas">Adrián García Casas</h2>
     <p>
-      Valladolid, Spain<br />
-      canonale@gmail.com
+      <IconPin class="w-8 inline" />Valladolid, Spain<br />
+      <IconEmail class="w-8 inline" /><a href="mailto:canonale@gmail.com"
+        >canonale@gmail.com</a
+      ><br />
+      <IconPhone class="w-8 inline" /><a href="tel:+34669299226"
+        >(+34) 669 29 92 26</a
+      >
     </p>
     <h2 id="professional-summary-">Professional Summary:</h2>
     <p>
